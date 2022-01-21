@@ -22,6 +22,10 @@ class CounterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // control counterCubitValue is positive
+    final isPositive = context.select((CounterCubit counterCubit) =>
+        counterCubit.state.counterCubitValue > 0);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(Strings.counterPageTitle),
@@ -43,7 +47,9 @@ class CounterView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FloatingActionButton(
-                  onPressed: context.read<CounterCubit>().decrement,
+                  onPressed: isPositive
+                      ? context.read<CounterCubit>().decrement
+                      : null,
                   child: const Icon(Icons.remove),
                 ),
                 FloatingActionButton(
