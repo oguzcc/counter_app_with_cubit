@@ -1,5 +1,5 @@
-import 'package:counter_app_with_cubit/core/constants/paddings.dart';
-import 'package:counter_app_with_cubit/core/constants/strings.dart';
+import '../../core/constants/paddings.dart';
+import '../../core/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
